@@ -17,16 +17,25 @@ Latitude = st.number_input("Latitude")
 Longitude = st.number_input("Longitude")
 
 if st.button("Predict"):
-    data = np.array([[MedInc, HouseAge, AveRooms, AveBedrms,
-                      Population, AveOccup, Latitude, Longitude]])
 
-    data_scaled = scaler.transform(data)
-    result = model.predict(data_scaled)
+    # 🔒 Validation des entrées
+    if (MedInc == 0 or HouseAge == 0 or AveRooms == 0 or AveBedrms == 0 or
+        Population == 0 or AveOccup == 0 or Latitude == 0 or Longitude == 0):
 
-    price_dollars = result[0] * 100000
-    formatted_price = f"{price_dollars:,.3f}"
+        st.error("❌ Please enter all values before prediction.")
 
-    st.success(f"Estimated House Price: ${formatted_price}")
+    else:
+        data = np.array([[MedInc, HouseAge, AveRooms, AveBedrms,
+                          Population, AveOccup, Latitude, Longitude]])
+
+        data_scaled = scaler.transform(data)
+        result = model.predict(data_scaled)
+
+        price_dollars = result[0] * 100000
+        formatted_price = f"{price_dollars:,.3f}"
+
+        st.success(f"Estimated House Price: ${formatted_price}")
+
 
 
 
