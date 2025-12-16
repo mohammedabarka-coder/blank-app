@@ -28,5 +28,8 @@ if st.button("Predict"):
     price_dollars = result[0] * 100000
 
     st.success(f"Estimated House Price: ${price_dollars:,.0f}")
+    formatted_price = f"{price_dollars:,.3f}"
+st.success(f"Estimated House Price: {formatted_price}")
+
 
 
