@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# Charger le modèle et le scaler
 model = pickle.load(open("model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
@@ -20,14 +19,15 @@ Longitude = st.number_input("Longitude")
 if st.button("Predict"):
     data = np.array([[MedInc, HouseAge, AveRooms, AveBedrms,
                       Population, AveOccup, Latitude, Longitude]])
-    
+
     data_scaled = scaler.transform(data)
     result = model.predict(data_scaled)
 
-    # Conversion vers dollars
     price_dollars = result[0] * 100000
+    formatted_price = f"{price_dollars:,.3f}"
 
-    st.success(f"Estimated House Price: ${price_dollars:,.0f}")
+    st.success(f"Estimated House Price: ${formatted_price}")
+
 
 
 
