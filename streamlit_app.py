@@ -5,7 +5,7 @@ import pickle
 model = pickle.load(open("model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
-st.title("House Price Prediction")
+st.title("🏠 House Price Prediction")
 
 MedInc = st.number_input("Median Income", min_value=0.0)
 HouseAge = st.number_input("House Age", min_value=0.0)
