@@ -28,5 +28,7 @@ if st.button("Predict"):
     price_dollars = result[0] * 100000
 
     st.success(f"Estimated House Price: ${price_dollars:,.0f}")
+if price_dollars < 0:
+    st.error("Invalid input values")
 
 
