@@ -7,7 +7,7 @@ scaler = pickle.load(open("scaler.pkl", "rb"))
 
 st.title("🏠 House Price Prediction")
 
-MedInc = st.number_input("Median Income", min_value=0.5, max_value=15.0, value=3.0)
+MedInc = st.number_input("Median Income", min_value=0.5, max_value=50000.0, value=3.0)
 HouseAge = st.number_input("House Age", min_value=1.0, max_value=52.0, value=20.0)
 AveRooms = st.number_input("Average Rooms", min_value=2.0, max_value=10.0, value=5.0)
 AveBedrms = st.number_input("Average Bedrooms", min_value=1.0, max_value=5.0, value=2.0)
