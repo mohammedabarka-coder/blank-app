@@ -22,4 +22,4 @@ if st.button("Predict"):
     data = scaler.transform(data)
     result = model.predict(data)
 
-    st.success(f"Estimated House Price: {result[0]:.2f}")
+    st.success(f"Estimated House Price: ${result[0]:.2f}")
