@@ -10,7 +10,7 @@ st.title("🏠 House Price Prediction")
 
 # Intervalles logiques et contrôlés
 MedInc = st.number_input(
-    "Median Income", min_value=0.5, max_value=15.0, value=3.0)
+    "Median Income (×10,000 $/year)", min_value=0.5, max_value=15.0, value=3.0)
 
 HouseAge = st.number_input(
     "House Age (years)", min_value=1.0, max_value=52.0, value=20.0)
