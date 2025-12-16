@@ -10,16 +10,16 @@ st.title("🏠 House Price Prediction")
 
 # Intervalles logiques et contrôlés
 MedInc = st.number_input(
-    "Median Income", min_value=0.5, max_value=100000.0, value=3.0)
+    "Median Income", min_value=0.5, max_value=15.0, value=3.0)
 
 HouseAge = st.number_input(
-    "House Age (years)", min_value=1.0, max_value=100.0, value=20.0)
+    "House Age (years)", min_value=1.0, max_value=52.0, value=20.0)
 
 AveRooms = st.number_input(
-    "Average Rooms", min_value=1.0, max_value=20.0, value=5.0)
+    "Average Rooms", min_value=1.0, max_value=10.0, value=5.0)
 
 AveBedrms = st.number_input(
-    "Average Bedrooms", min_value=1.0, max_value=20.0, value=2.0)
+    "Average Bedrooms", min_value=1.0, max_value=5.0, value=2.0)
 
 Population = st.number_input(
     "Population", min_value=1.0, max_value=100.0, value=50.0)
@@ -45,6 +45,7 @@ if st.button("Predict"):
     formatted_price = f"{price_dollars:,.0f}"
 
     st.success(f"Estimated House Price: ${formatted_price}")
+
 
 
 
