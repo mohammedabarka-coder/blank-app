@@ -25,7 +25,7 @@ Population = st.number_input(
     "Population", min_value=1.0, max_value=100.0, value=50.0)
 
 AveOccup = st.number_input(
-    "Average Occupancy", min_value=1.0, max_value=5.0, value=3.0)
+    "Average Occupancy", min_value=1.0, max_value=20.0, value=3.0)
 
 Latitude = st.number_input(
     "Latitude", min_value=32.0, max_value=42.0, value=37.0)
